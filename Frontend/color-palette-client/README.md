@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+README – Gemini Color Palette Generator
+# 🎨 Gemini Color Palette Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **Gemini Color Palette Generator** — a full-stack application that generates beautiful, modern color palettes based on your creative prompt.
 
-## Available Scripts
+Powered by the **Gemini API**, this tool translates your words into visual color inspiration by returning five unique hex colors tailored to your input.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🔮 Generate custom palettes from natural language prompts  
+- 🎨 Displays each color with a swatch and its hex code  
+- 📋 Click to copy hex codes to clipboard  
+- 💬 Clean, modern UI with responsive design  
+- ⚡ Powered by Gemini AI API  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![App Demo Screenshot](screenshot.png)
 
-### `npm run build`
+*Prompt: “sunset over the ocean” → beautiful sunset palette colors*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Frontend**
+- React (Functional Components + Hooks)
+- CSS Grid / Flexbox
+- Modern, responsive styling
 
-### `npm run eject`
+**Backend**
+- Node.js + Express
+- Gemini API integration (via REST)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📦 Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repo**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/your-username/gemini-palette-generator.git
+cd gemini-palette-generator
+```
 
-## Learn More
+2. **Install dependencies**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# For client
+cd client
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# For server
+cd ../server
+npm install
+```
 
-### Code Splitting
+3. **Set up environment variables**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+In the `/server` directory, create a `.env` file:
 
-### Analyzing the Bundle Size
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. **Run the app**
 
-### Making a Progressive Web App
+```bash
+# In the server folder
+npm run dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# In the client folder
+npm start
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🧠 How It Works
 
-### Deployment
+1. User enters a descriptive prompt (e.g., "vintage bookstore vibes").  
+2. The prompt is sent to the backend, which makes a POST request to the Gemini API.  
+3. Gemini responds with 5 hex color codes.  
+4. The frontend renders each hex code as a color swatch.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📁 Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+/client
+  /components
+    - PaletteForm.js
+    - ColorSwatch.js
+  /styles
+    - PaletteForm.css
+    - ColorSwatch.css
+
+/server
+  - index.js
+  - routes/palette.js
+```
+
+---
+
+## 🙌 Future Enhancements
+
+- 💾 Save palettes and prompts  
+- 🔁 Display recent palettes  
+- 🌚 Dark mode  
+- 🖼 Export palette as image  
+- 🏷️ Auto-generate palette names  
+
+---
+
+## 👩‍💻 Author
+
+Built with ❤️ by [Nikki Schiewer](https://github.com/NicoleSchiewer)
