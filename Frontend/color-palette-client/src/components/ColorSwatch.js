@@ -1,4 +1,5 @@
 import React from 'react';
+import './ColorSwatch.css'; // <-- make sure this is here
 
 const ColorSwatch = ({ color }) => {
   return (
@@ -7,7 +8,7 @@ const ColorSwatch = ({ color }) => {
         className="color-box"
         style={{ backgroundColor: color }}
       />
-      <p>{color}</p>
+      <p className="hex-label">{color}</p>
     </div>
   );
 };

@@ -37,12 +37,13 @@ const PaletteForm = () => {
 
   return (
     <div className="palette-container">
+      <h1 className="palette-title">Gemini Palette Generator 🎨</h1>
       <form onSubmit={handleSubmit} className="palette-form">
         <input
           type="text"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Describe your color palette..."
+          placeholder="Describe your color palette."
           className="palette-input"
           required
         />
