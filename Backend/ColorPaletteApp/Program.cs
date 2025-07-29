@@ -22,7 +22,7 @@ builder.Services.AddCors(options =>
 
         builder => builder
 
-            .WithOrigins("https://yourapp.com")
+            .WithOrigins("https://color-palette-application.vercel.app/")
 
             .AllowAnyMethod()
 
