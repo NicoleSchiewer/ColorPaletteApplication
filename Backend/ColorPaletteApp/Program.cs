@@ -14,22 +14,6 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddControllers();
 
-builder.Services.AddCors(options =>
-
-{
-
-    options.AddPolicy("AllowSpecificOrigin",
-
-        builder => builder
-
-            .WithOrigins("https://color-palette-application.vercel.app/")
-
-            .AllowAnyMethod()
-
-            .AllowAnyHeader());
-
-});
-
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -40,10 +24,6 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
-
-app.UseRouting();
-
-app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
 

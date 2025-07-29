@@ -70,9 +70,6 @@ GEMINI_API_KEY=your_gemini_api_key_here
 4. **Run the app**
 
 ```bash
-# In the server folder
-npm run dev
-
 # In the client folder
 npm start
 ```
