@@ -14,15 +14,20 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddControllers();
 
-// 1. Add CORS service and policy:
 builder.Services.AddCors(options =>
+
 {
-    options.AddPolicy("AllowFrontend", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+
+    options.AddPolicy("AllowSpecificOrigin",
+
+        builder => builder
+
+            .WithOrigins("https://yourapp.com")
+
+            .AllowAnyMethod()
+
+            .AllowAnyHeader());
+
 });
 
 
@@ -38,7 +43,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseCors("AllowFrontend");
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
 
