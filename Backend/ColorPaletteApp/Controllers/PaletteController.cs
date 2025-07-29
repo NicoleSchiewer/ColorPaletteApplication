@@ -22,9 +22,12 @@ public class PaletteController(IGeminiService geminiService) : ControllerBase
         }
     }
 
-    [HttpOptions]
+    [HttpOptions("api/palette")]
     public IActionResult Preflight()
     {
+        Response.Headers.Append("Access-Control-Allow-Origin", "https://color-palette-application.vercel.app");
+        Response.Headers.Append("Access-Control-Allow-Methods", "POST, OPTIONS");
+        Response.Headers.Append("Access-Control-Allow-Headers", "Content-Type");
         return NoContent();
     }
 
