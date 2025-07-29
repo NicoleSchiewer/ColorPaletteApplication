@@ -21,4 +21,11 @@ public class PaletteController(IGeminiService geminiService) : ControllerBase
             return StatusCode(500, $"Error generating palette: {ex.Message}");
         }
     }
+
+    [HttpOptions]
+    public IActionResult Preflight()
+    {
+        return NoContent();
+    }
+
 }
