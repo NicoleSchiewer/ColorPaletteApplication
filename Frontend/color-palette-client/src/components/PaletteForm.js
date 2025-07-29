@@ -15,7 +15,7 @@ const PaletteForm = () => {
     setColors([]);
 
     try {
-      const response = await fetch('/api/palette', {
+      const response = await fetch('https://colorpaletteapp.onrender.com/api/palette', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt }),
