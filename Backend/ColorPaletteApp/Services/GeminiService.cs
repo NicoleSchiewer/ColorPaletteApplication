@@ -15,7 +15,7 @@ public class GeminiService : IGeminiService
     public GeminiService(IConfiguration config, IHttpClientFactory httpClientFactory)
     {
         _httpClient = httpClientFactory.CreateClient();
-        _apiKey = config["Gemini:ApiKey"] ?? throw new ArgumentNullException("Gemini:ApiKey", "API key cannot be null.");
+        _apiKey = config["Gemini_Apikey"] ?? throw new ArgumentNullException("Gemini_Apikey", "API key cannot be null.");
     }
 
     public async Task<PaletteResponse> GeneratePaletteAsync(string promptText)
