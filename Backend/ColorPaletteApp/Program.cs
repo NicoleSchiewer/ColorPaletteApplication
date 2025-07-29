@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("https://color-palette-application.vercel.app/")
+        policy.WithOrigins("https://color-palette-application.vercel.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
