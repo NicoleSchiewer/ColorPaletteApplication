@@ -35,11 +35,22 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
-// IMPORTANT: Add UseRouting BEFORE UseCors
-app.UseRouting();
-
 app.UseCors("AllowVercelFrontend");
 
+app.Use(async (context, next) =>
+{
+    if (context.Request.Method == HttpMethods.Options)
+    {
+        context.Response.StatusCode = 204;
+        await context.Response.CompleteAsync();
+    }
+    else
+    {
+        await next();
+    }
+});
+
+app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
