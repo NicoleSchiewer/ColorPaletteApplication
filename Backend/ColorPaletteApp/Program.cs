@@ -14,6 +14,16 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddControllers();
 
+// Configure CORS to allow your frontend origin
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowVercelFrontend", policy =>
+    {
+        policy.WithOrigins("https://color-palette-application.vercel.app")  // <-- no trailing slash
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,6 +34,11 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+
+// IMPORTANT: Add UseRouting BEFORE UseCors
+app.UseRouting();
+
+app.UseCors("AllowVercelFrontend");
 
 app.UseAuthorization();
 
